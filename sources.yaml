@@ -7,3 +7,10 @@ municipality_boundaries:
   url: "https://www.e-prostor.gov.si/en/access-to-geodetic-data/"
   license: "CC-BY 4.0"
   accessed: "2026-09-04"
+
+osm_poi_data:
+  source: "OpenStreetMap contributors"
+  dataset: "Points of interest (categories defined in config.yaml)"
+  url: "https://www.openstreetmap.org/copyright"
+  license: "ODbL"
+  accessed: "2026-09-04"
