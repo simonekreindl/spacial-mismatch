@@ -1,0 +1,200 @@
+sifra_obcine,municipality_name,grocery,healthcare
+1,Ajdovščina,11.0,2.0
+2,Beltinci,6.0,1.0
+3,Bled,10.0,1.0
+4,Bohinj,7.0,1.0
+5,Borovnica,3.0,1.0
+6,Bovec,7.0,1.0
+7,Brda,7.0,1.0
+8,Brezovica,6.0,3.0
+9,Brežice,18.0,4.0
+10,Tišina,2.0,1.0
+11,Celje,25.0,9.0
+12,Cerklje na Gorenjskem,4.0,2.0
+13,Cerknica,9.0,3.0
+14,Cerkno,3.0,2.0
+15,Črenšovci,3.0,1.0
+16,Črna na Koroškem,1.0,0.0
+17,Črnomelj,10.0,1.0
+19,Divača,3.0,0.0
+20,Dobrepolje,2.0,2.0
+21,Dobrova-Polhov Gradec,1.0,1.0
+22,Dol pri Ljubljani,3.0,2.0
+23,Domžale,14.0,4.0
+24,Dornava,1.0,1.0
+25,Dravograd,9.0,1.0
+26,Duplek,2.0,1.0
+27,Gorenja vas-Poljane,4.0,0.0
+28,Gorišnica,2.0,1.0
+29,Gornja Radgona,8.0,2.0
+30,Gornji Grad,1.0,1.0
+31,Gornji Petrovci,1.0,1.0
+32,Grosuplje,11.0,5.0
+33,Šalovci,2.0,0.0
+34,Hrastnik,3.0,0.0
+35,Hrpelje-Kozina,6.0,1.0
+36,Idrija,12.0,2.0
+37,Ig,3.0,1.0
+38,Ilirska Bistrica,12.0,3.0
+39,Ivančna Gorica,8.0,1.0
+40,Izola,11.0,3.0
+41,Jesenice,14.0,2.0
+42,Juršinci,1.0,1.0
+43,Kamnik,16.0,3.0
+44,Kanal,3.0,1.0
+45,Kidričevo,6.0,1.0
+46,Kobarid,8.0,1.0
+47,Kobilje,1.0,0.0
+48,Kočevje,9.0,1.0
+49,Komen,6.0,1.0
+50,Koper,35.0,7.0
+51,Kozje,2.0,1.0
+52,Kranj,27.0,5.0
+53,Kranjska Gora,7.0,1.0
+54,Krško,17.0,2.0
+55,Kungota,4.0,1.0
+56,Kuzma,1.0,0.0
+57,Laško,7.0,4.0
+58,Lenart,10.0,2.0
+59,Lendava,13.0,5.0
+60,Litija,11.0,2.0
+61,Ljubljana,184.0,50.0
+62,Ljubno,3.0,0.0
+63,Ljutomer,14.0,1.0
+64,Logatec,7.0,1.0
+65,Loška dolina,3.0,1.0
+66,Loški Potok,1.0,0.0
+67,Luče,1.0,0.0
+68,Lukovica,2.0,1.0
+69,Majšperk,4.0,1.0
+70,Maribor,79.0,20.0
+71,Medvode,11.0,1.0
+72,Mengeš,2.0,1.0
+73,Metlika,5.0,1.0
+74,Mežica,2.0,1.0
+75,Miren-Kostanjevica,4.0,1.0
+76,Mislinja,1.0,0.0
+77,Moravče,3.0,1.0
+78,Moravske Toplice,6.0,2.0
+79,Mozirje,5.0,1.0
+80,Murska Sobota,25.0,5.0
+81,Muta,4.0,0.0
+82,Naklo,2.0,1.0
+83,Nazarje,2.0,0.0
+84,Nova Gorica,25.0,5.0
+85,Novo mesto,17.0,2.0
+86,Odranci,1.0,0.0
+87,Ormož,12.0,2.0
+88,Osilnica,1.0,0.0
+89,Pesnica,4.0,0.0
+90,Piran,19.0,3.0
+91,Pivka,6.0,1.0
+92,Podčetrtek,5.0,2.0
+93,Podvelka,5.0,1.0
+94,Postojna,11.0,3.0
+95,Preddvor,1.0,1.0
+96,Ptuj,19.0,6.0
+97,Puconci,4.0,1.0
+98,Rače-Fram,5.0,1.0
+99,Radeče,4.0,1.0
+100,Radenci,5.0,2.0
+101,Radlje ob Dravi,5.0,1.0
+102,Radovljica,17.0,3.0
+103,Ravne na Koroškem,6.0,0.0
+104,Ribnica,6.0,0.0
+105,Rogašovci,3.0,0.0
+106,Rogaška Slatina,11.0,2.0
+107,Rogatec,2.0,1.0
+108,Ruše,9.0,1.0
+110,Sevnica,9.0,1.0
+111,Sežana,15.0,4.0
+112,Slovenj Gradec,13.0,1.0
+113,Slovenska Bistrica,20.0,4.0
+114,Slovenske Konjice,12.0,3.0
+115,Starše,3.0,1.0
+116,Sveti Jurij ob Ščavnici,1.0,1.0
+117,Šenčur,3.0,1.0
+118,Šentilj,10.0,1.0
+119,Šentjernej,2.0,1.0
+120,Šentjur,12.0,1.0
+121,Škocjan,2.0,0.0
+122,Škofja Loka,12.0,0.0
+123,Škofljica,6.0,1.0
+124,Šmarje pri Jelšah,11.0,1.0
+125,Šmartno ob Paki,1.0,0.0
+126,Šoštanj,2.0,0.0
+127,Štore,1.0,1.0
+128,Tolmin,12.0,1.0
+129,Trbovlje,9.0,3.0
+130,Trebnje,8.0,0.0
+131,Tržič,11.0,2.0
+132,Turnišče,4.0,1.0
+133,Velenje,12.0,2.0
+134,Velike Lašče,3.0,0.0
+135,Videm,3.0,0.0
+136,Vipava,3.0,1.0
+137,Vitanje,2.0,1.0
+138,Vodice,2.0,1.0
+139,Vojnik,4.0,1.0
+140,Vrhnika,8.0,3.0
+141,Vuzenica,0.0,1.0
+142,Zagorje ob Savi,10.0,2.0
+144,Zreče,5.0,1.0
+146,Železniki,3.0,0.0
+147,Žiri,3.0,0.0
+148,Benedikt,2.0,0.0
+149,Bistrica ob Sotli,2.0,0.0
+150,Bloke,1.0,1.0
+151,Braslovče,1.0,0.0
+152,Cankova,2.0,1.0
+155,Dobrna,2.0,1.0
+156,Dobrovnik,1.0,1.0
+157,Dolenjske Toplice,1.0,1.0
+158,Grad,1.0,1.0
+159,Hajdina,3.0,1.0
+160,Hoče-Slivnica,9.0,1.0
+162,Horjul,2.0,1.0
+163,Jezersko,1.0,0.0
+164,Komenda,4.0,1.0
+166,Križevci,1.0,1.0
+168,Markovci,2.0,0.0
+169,Miklavž na Dravskem polju,4.0,1.0
+170,Mirna Peč,0.0,1.0
+171,Oplotnica,2.0,0.0
+172,Podlehnik,1.0,0.0
+173,Polzela,3.0,0.0
+174,Prebold,4.0,0.0
+175,Prevalje,5.0,0.0
+176,Razkrižje,2.0,1.0
+177,Ribnica na Pohorju,2.0,0.0
+178,Selnica ob Dravi,3.0,1.0
+179,Sodražica,2.0,0.0
+180,Solčava,1.0,0.0
+181,Sveta Ana,2.0,0.0
+183,Šempeter-Vrtojba,9.0,2.0
+185,Trnovska vas,1.0,0.0
+186,Trzin,2.0,0.0
+187,Velika Polana,1.0,0.0
+188,Veržej,1.0,0.0
+189,Vransko,2.0,1.0
+190,Žalec,11.0,1.0
+191,Žetale,1.0,0.0
+192,Žirovnica,3.0,1.0
+193,Žužemberk,4.0,1.0
+194,Šmartno pri Litiji,4.0,0.0
+195,Apače,2.0,1.0
+197,Kostanjevica na Krki,1.0,1.0
+198,Makole,1.0,1.0
+199,Mokronog-Trebelno,2.0,0.0
+200,Poljčane,2.0,0.0
+201,Renče-Vogrsko,2.0,1.0
+202,Središče ob Dravi,2.0,1.0
+203,Straža,2.0,1.0
+204,Sveta Trojica v Slovenskih goricah,1.0,0.0
+206,Šmarješke Toplice,1.0,0.0
+207,Gorje,2.0,0.0
+208,Log-Dragomer,1.0,1.0
+209,Rečica ob Savinji,1.0,0.0
+211,Šentrupert,1.0,0.0
+212,Mirna,0.0,1.0
+213,Ankaran,3.0,1.0
