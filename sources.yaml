@@ -1,0 +1,7 @@
+municipality_boundaries:
+  source: "Geodetska uprava Republike Slovenije (GURS)"
+  dataset: "Register prostorskih enot"
+  wfs_layer: "SI.GURS.RPE:OBCINE"
+  url: "https://www.e-prostor.gov.si/en/access-to-geodetic-data/"
+  license: "CC-BY 4.0"
+  accessed: "2026-09-04"
