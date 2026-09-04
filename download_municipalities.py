@@ -1,6 +1,6 @@
 import geopandas as gpd
 
-# This script downloads the official boundaries of all 212 Slovenian municipalities.
+# This script downloads the official boundaries of all 212 Slovenian municipalities
 
 # Source: Geodetska uprava Republike Slovenije (GURS), Register prostorskih enot (RPE)
 # WFS layer: SI.GURS.RPE:OBCINE - municipality boundaries

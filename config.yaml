@@ -1,0 +1,11 @@
+# This file defines the OSM categories used for data collection
+
+categories:
+  provisioning_services:
+    grocery:
+      - shop=supermarket
+      - shop=convenience
+
+  healthcare_care:
+    healthcare:
+      - amenity=pharmacy

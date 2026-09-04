@@ -1,3 +1,5 @@
+# This file lists all data sources used in this project
+
 municipality_boundaries:
   source: "Geodetska uprava Republike Slovenije (GURS)"
   dataset: "Register prostorskih enot"
