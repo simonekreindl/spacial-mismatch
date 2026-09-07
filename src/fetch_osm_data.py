@@ -133,7 +133,7 @@ if all_results:
 
 if failed_permanently:
     # Written to a log file so gaps are visible and traceable
-    print(f"\n⚠️ {len(failed_permanently)} categories failed permanently:")
+    print(f"\nWARNING: {len(failed_permanently)} categories failed permanently:")
     with open("../data/raw/failed_queries.log", "w", encoding="utf-8") as f:
         for parent_cat, subcat, tags in failed_permanently:
             line = f"{parent_cat}/{subcat}"
