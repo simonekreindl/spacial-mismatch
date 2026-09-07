@@ -29,5 +29,5 @@ print(f"Number of municipalities: {len(gdf)}")
 print(gdf.head())
 
 # Save as a GeoPackage file
-gdf.to_file("municipalities.gpkg", driver="GPKG")
+gdf.to_file("../data/raw/municipalities.gpkg", driver="GPKG")
 print("Saved as municipalities.gpkg")

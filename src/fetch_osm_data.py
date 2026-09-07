@@ -11,7 +11,7 @@ from datetime import date
 # License: ODbL
 
 # Load category definitions
-with open("config.yaml", "r", encoding="utf-8") as f:
+with open("../config.yaml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 categories = config["categories"]
@@ -125,7 +125,7 @@ for round_num in range(1, 4):
 failed_permanently = pending
 
 if all_results:
-    with open("osm_raw_points.csv", "w", newline="", encoding="utf-8") as f:
+    with open("../data/raw/osm_raw_points.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=all_results[0].keys())
         writer.writeheader()
         writer.writerows(all_results)
@@ -134,7 +134,7 @@ if all_results:
 if failed_permanently:
     # Written to a log file so gaps are visible and traceable
     print(f"\n⚠️ {len(failed_permanently)} categories failed permanently:")
-    with open("failed_queries.log", "w", encoding="utf-8") as f:
+    with open("../data/raw/failed_queries.log", "w", encoding="utf-8") as f:
         for parent_cat, subcat, tags in failed_permanently:
             line = f"{parent_cat}/{subcat}"
             print(f"  - {line}")

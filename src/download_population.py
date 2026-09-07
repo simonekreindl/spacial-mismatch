@@ -58,5 +58,5 @@ print(df.head())
 print(f"Number of municipalities: {len(df)}")
 
 # Save result to CSV
-df.to_csv("population_per_municipality.csv", index=False, encoding="utf-8")
+df.to_csv("../data/raw/population_per_municipality.csv", index=False, encoding="utf-8")
 print("Saved as population_per_municipality.csv")
