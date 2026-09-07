@@ -14,3 +14,9 @@ osm_poi_data:
   url: "https://www.openstreetmap.org/copyright"
   license: "ODbL"
   accessed: "2026-09-04"
+
+population_data:
+  source: "Statistical Office of the Republic of Slovenia (SURS)"
+  dataset: "Population by MUNICIPALITIES, HALF-YEAR and AGE (05C4003S)"
+  url: "https://pxweb.stat.si/SiStatData/pxweb/en/Data/Data/05C4003S.px"
+  accessed: "2026-09-07"
