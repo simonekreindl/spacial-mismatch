@@ -9,6 +9,9 @@ counts = pd.read_csv("../data/interim/category_counts_per_municipality.csv", dty
 population["sifra_obcine"] = population["sifra_obcine"].str.lstrip("0")
 counts["sifra_obcine"] = counts["sifra_obcine"].str.lstrip("0")
 
+# Remove duplicate name column before merging
+counts = counts.drop(columns=["municipality_name"])
+
 # Join counts onto population
 merged = pd.merge(population, counts, on="sifra_obcine", how="left")
 merged = merged.fillna(0)
