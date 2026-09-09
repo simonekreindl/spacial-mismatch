@@ -3,15 +3,20 @@ import time
 import csv
 import yaml
 from datetime import date
+import os
 
 # This script fetches point-of-interest data (e.g. shops, pharmacies) from
 # OpenStreetMap for all categories defined in config.yaml, covering all of Slovenia.
+
+# Make file paths work no matter where this script is run from
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
 # Source: OpenStreetMap contributors
 # License: ODbL
 
 # Load category definitions
-with open("../config.yaml", "r", encoding="utf-8") as f:
+with open(os.path.join(SCRIPT_DIR, "..", "config.yaml"), "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 categories = config["categories"]
@@ -125,7 +130,7 @@ for round_num in range(1, 4):
 failed_permanently = pending
 
 if all_results:
-    with open("../data/raw/osm_raw_points.csv", "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(DATA_DIR, "raw", "osm_raw_points.csv"), "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=all_results[0].keys())
         writer.writeheader()
         writer.writerows(all_results)
@@ -134,7 +139,7 @@ if all_results:
 if failed_permanently:
     # Written to a log file so gaps are visible and traceable
     print(f"\nWARNING: {len(failed_permanently)} categories failed permanently:")
-    with open("../data/raw/failed_queries.log", "w", encoding="utf-8") as f:
+    with open(os.path.join(DATA_DIR, "raw", "failed_queries.log"), "w", encoding="utf-8") as f:
         for parent_cat, subcat, tags in failed_permanently:
             line = f"{parent_cat}/{subcat}"
             print(f"  - {line}")

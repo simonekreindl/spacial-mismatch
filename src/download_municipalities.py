@@ -1,6 +1,11 @@
 import geopandas as gpd
+import os
 
 # This script downloads the official boundaries of all 212 Slovenian municipalities
+
+# Make file paths work no matter where this script is run from
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
 # Source: Geodetska uprava Republike Slovenije (GURS), Register prostorskih enot (RPE)
 # WFS layer: SI.GURS.RPE:OBCINE - municipality boundaries
@@ -29,5 +34,5 @@ print(f"Number of municipalities: {len(gdf)}")
 print(gdf.head())
 
 # Save as a GeoPackage file
-gdf.to_file("../data/raw/municipalities.gpkg", driver="GPKG")
+gdf.to_file(os.path.join(DATA_DIR, "raw", "municipalities.gpkg"), driver="GPKG")
 print("Saved as municipalities.gpkg")

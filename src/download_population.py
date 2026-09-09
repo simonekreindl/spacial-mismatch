@@ -1,8 +1,13 @@
 import requests
 import pandas as pd
+import os
 
 # This script downloads current total population per municipality from SURS
 # using the PxWeb API (SiStat database).
+
+# Make file paths work no matter where this script is run from
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
 # Source: Statistical Office of the Republic of Slovenia (SURS)
 # Dataset: Population by MUNICIPALITIES, HALF-YEAR and AGE (table 05C4003S)
@@ -58,5 +63,5 @@ print(df.head())
 print(f"Number of municipalities: {len(df)}")
 
 # Save result to CSV
-df.to_csv("../data/raw/population_per_municipality.csv", index=False, encoding="utf-8")
+df.to_csv(os.path.join(DATA_DIR, "raw", "population_per_municipality.csv"), index=False, encoding="utf-8")
 print("Saved as population_per_municipality.csv")

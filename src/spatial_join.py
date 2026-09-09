@@ -1,11 +1,16 @@
 import geopandas as gpd
 import pandas as pd
+import os
 
 # This script assigns each OSM point to the
 # municipality it falls within
 
+# Make file paths work no matter where this script is run from
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
+
 # Load OSM points and convert to a GeoDataFrame
-points_df = pd.read_csv("../data/raw/osm_raw_points.csv")
+points_df = pd.read_csv(os.path.join(DATA_DIR, "raw", "osm_raw_points.csv"))
 points_gdf = gpd.GeoDataFrame(
     points_df,
     geometry=gpd.points_from_xy(points_df.lon, points_df.lat),
@@ -16,7 +21,7 @@ points_gdf = gpd.GeoDataFrame(
 points_gdf = points_gdf.to_crs(epsg=3794)
 
 # Load municipality boundaries
-municipalities = gpd.read_file("../data/raw/municipalities.gpkg")
+municipalities = gpd.read_file(os.path.join(DATA_DIR, "raw", "municipalities.gpkg"))
 
 # Spatial join: for each point, find which municipality polygon it falls within
 joined = gpd.sjoin(points_gdf, municipalities, how="left", predicate="within")
@@ -25,5 +30,5 @@ print(f"Assigned: {joined['sifra_obcine'].notna().sum()} of {len(joined)}")
 print(f"Not assigned (edge cases / errors): {joined['sifra_obcine'].isna().sum()}")
 
 # Save as a GeoPackage file
-joined.to_file("../data/interim/points_with_municipality.gpkg", driver="GPKG")
+joined.to_file(os.path.join(DATA_DIR, "interim", "points_with_municipality.gpkg"), driver="GPKG")
 print("Saved as points_with_municipality.gpkg")
