@@ -10,6 +10,8 @@ DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
 joined = gpd.read_file(os.path.join(DATA_DIR, "interim", "points_with_municipality.gpkg"))
 
+joined = joined.dropna(subset=["sifra_obcine"])
+joined["sifra_obcine"] = joined["sifra_obcine"].astype(int).astype(str)
 # Count points per municipality + category combination
 counts = joined.groupby(["sifra_obcine", "municipality_name", "category"]).size().reset_index(name="count")
 

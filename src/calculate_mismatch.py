@@ -1,6 +1,7 @@
 import geopandas as gpd
 import pandas as pd
 import os
+import yaml
 
 # This script calculates spatial mismatch scores per municipality and saves the final
 # result as a GeoPackage, combining the data with municipality boundaries.
@@ -14,7 +15,21 @@ df = pd.read_csv(os.path.join(DATA_DIR, "interim", "merged_municipality_data.csv
 # Rank municipalities by population (rank 1 = highest population)
 df["population_rank"] = df["population"].rank(ascending=False)
 
-category_columns = ["grocery", "healthcare"]
+# Read the category names from config
+with open(os.path.join(SCRIPT_DIR, "..", "config.yaml"), "r", encoding="utf-8") as f:
+    config = yaml.safe_load(f)
+
+category_columns_wanted = [
+    subcat
+    for midcats in config["categories"].values()
+    for subcat in midcats.keys()
+]
+
+# Only use categories that actually produced data (some OSM tags may have zero matches)
+category_columns = [c for c in category_columns_wanted if c in df.columns]
+missing = [c for c in category_columns_wanted if c not in df.columns]
+if missing:
+    print(f"Note: no data found for these categories, skipping: {missing}")
 
 for cat in category_columns:
     # Rank municipalities by this category's count (rank 1 = most services)

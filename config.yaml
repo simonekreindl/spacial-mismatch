@@ -1,11 +1,97 @@
 # This file defines the OSM categories used for data collection
 
 categories:
-  provisioning_services:
-    grocery:
+  supply_and_services:
+    food_supply_main:
       - shop=supermarket
       - shop=convenience
+      - shop=discount_store
+    food_supply_other:
+      - shop=grocery
+      - shop=bakery
+      - shop=butcher
+      - shop=greengrocer
+    retail:
+      - shop=mall
+      - shop=department_store
+      - shop=clothes
+      - shop=shoes
+      - shop=furniture
+      - shop=electronics
+    commercial_services:
+      - shop=hairdresser
+      - shop=laundry
+      - shop=dry_cleaning
+      - office=insurance
+    bank_branches:
+      - amenity=bank
+    cash_machines:
+      - amenity=atm
+    post_offices:
+      - amenity=post_office
+    parcel_lockers:
+      - amenity=parcel_locker
+    public_transport_stops:
+      - highway=bus_stop
+      - railway=station
+      - railway=halt
+    bicycle_shops:
+      - shop=bicycle
 
-  healthcare_care:
-    healthcare:
+  health:
+    doctor_practices:
+      - amenity=doctors
+    dental_practices:
+      - amenity=dentist
+    general_specialist_practices:
+      - amenity=clinic
+    pharmacies:
       - amenity=pharmacy
+    nursing_homes:
+      - amenity=nursing_home
+      - amenity=social_facility
+
+  education:
+    kindergartens:
+      - amenity=kindergarten
+    schools:
+      - amenity=school
+    public_libraries:
+      - amenity=library
+    adult_education_centers:
+      - amenity=community_centre
+    music_schools:
+      - amenity=music_school
+
+  leisure:
+    green_open_space:
+      - leisure=park
+      - leisure=garden
+    entertainment_culture:
+      - amenity=cinema
+      - amenity=theatre
+      - tourism=museum
+      - amenity=nightclub
+      - amenity=arts_centre
+    playgrounds:
+      - leisure=playground
+    sports_facilities:
+      - leisure=sports_centre
+      - leisure=pitch
+      - leisure=stadium
+    swimming_facilities:
+      - leisure=swimming_pool
+    gastronomy:
+      - amenity=restaurant
+      - amenity=cafe
+      - amenity=bar
+      - amenity=fast_food
+      - amenity=pub
+    places_of_worship:
+      - amenity=place_of_worship
+    firefighters:
+      - amenity=fire_station
+    senior_meeting_places:
+      - amenity=social_facility
+    youth_leisure_centres:
+      - amenity=youth_centre
