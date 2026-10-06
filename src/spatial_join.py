@@ -25,9 +25,13 @@ municipalities = gpd.read_file(os.path.join(DATA_DIR, "raw", "municipalities.gpk
 
 # Spatial join: for each point, find which municipality polygon it falls within
 joined = gpd.sjoin(points_gdf, municipalities, how="left", predicate="within")
+joined = joined.drop(columns=["index_right"], errors="ignore")
 
 print(f"Assigned: {joined['sifra_obcine'].notna().sum()} of {len(joined)}")
-print(f"Not assigned (edge cases / errors): {joined['sifra_obcine'].isna().sum()}")
+print(f"Outside all municipalities (across the border): {joined['sifra_obcine'].isna().sum()}")
+
+# Drop places just across the border (the OSM and GURS borders don't match exactly)
+joined = joined.dropna(subset=["sifra_obcine"])
 
 # Save as a GeoPackage file
 joined.to_file(os.path.join(DATA_DIR, "interim", "points_with_municipality.gpkg"), driver="GPKG")

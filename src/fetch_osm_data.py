@@ -37,6 +37,7 @@ def build_query(tags):
         key, value = tag.split("=")
         tag_filters += f'  node["{key}"="{value}"](area.si);\n'
         tag_filters += f'  way["{key}"="{value}"](area.si);\n'
+        tag_filters += f'  relation["{key}"="{value}"](area.si);\n'
 
     return f"""
     [out:json][timeout:120];
@@ -68,10 +69,6 @@ def try_fetch(parent_cat, subcat, tags, max_retries=3, wait=15):
             entries = []
             for el in elements:
                 el_tags = el.get("tags", {})
-
-                # Skip entries explicitly marked as no longer active
-                if any(k.startswith("disused:") for k in el_tags.keys()):
-                    continue
 
                 # "way" results give a center point instead of lat/lon directly
                 lat = el.get("lat") or el.get("center", {}).get("lat")
@@ -135,6 +132,11 @@ if all_results:
         writer.writeheader()
         writer.writerows(all_results)
     print(f"\nDone! {len(all_results)} entries saved to osm_raw_points.csv")
+
+# Remove the log from any earlier run, so it only lists this run's failures
+failed_log_path = os.path.join(DATA_DIR, "raw", "failed_queries.log")
+if os.path.exists(failed_log_path):
+    os.remove(failed_log_path)
 
 if failed_permanently:
     # Written to a log file so gaps are visible and traceable

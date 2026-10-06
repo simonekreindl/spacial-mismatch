@@ -25,22 +25,25 @@ category_columns_wanted = [
     for subcat in midcats.keys()
 ]
 
-# Only use categories that actually produced data (some OSM tags may have zero matches)
-category_columns = [c for c in category_columns_wanted if c in df.columns]
-missing = [c for c in category_columns_wanted if c not in df.columns]
-if missing:
-    print(f"Note: no data found for these categories, skipping: {missing}")
+category_columns = category_columns_wanted
+
+# Collect the new columns in a dictionary and add them to the table at once
+new_columns = {}
 
 for cat in category_columns:
-    # Rank municipalities by this category's count (rank 1 = most services)
-    df[f"{cat}_rank"] = df[cat].rank(ascending=False)
+    # Rank all municipalities by the number of locations (rank 1 = most)
+    cat_rank = df[cat].rank(ascending=False)
 
-    # Absolute rank difference (size of the mismatch)
-    df[f"mismatch_{cat}"] = (df["population_rank"] - df[f"{cat}_rank"]).abs()
+    # Population rank minus category rank: positive means more locations than
+    # the population suggests, negative means fewer
+    signed = df["population_rank"] - cat_rank
 
-    # Signed rank difference (positive = more services than expected,
-    # negative = fewer services than expected)
-    df[f"mismatch_{cat}_signed"] = df["population_rank"] - df[f"{cat}_rank"]
+    # Save the rank, the mismatch size (absolute value) and the signed mismatch
+    new_columns[f"{cat}_rank"] = cat_rank
+    new_columns[f"mismatch_{cat}"] = signed.abs()
+    new_columns[f"mismatch_{cat}_signed"] = signed
+
+df = pd.concat([df, pd.DataFrame(new_columns)], axis=1)
 
 print(df.head())
 

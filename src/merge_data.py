@@ -19,11 +19,17 @@ counts = counts.drop(columns=["municipality_name"])
 
 # Join counts onto population
 merged = pd.merge(population, counts, on="sifra_obcine", how="left")
-merged = merged.fillna(0)
+
+# No match means zero
+category_columns = [c for c in counts.columns if c != "sifra_obcine"]
+merged[category_columns] = merged[category_columns].fillna(0)
+
+# Stop if every count is zero 
+if (merged[category_columns] == 0).all().all():
+    raise ValueError("No counts matched, check the sifra_obcine format")
 
 print(merged.head())
 print(f"Number of municipalities: {len(merged)}")
-print(f"Missing population values: {merged['population'].isna().sum()}")
 
 # Save result to CSV
 merged.to_csv(os.path.join(DATA_DIR, "interim", "merged_municipality_data.csv"), index=False, encoding="utf-8")

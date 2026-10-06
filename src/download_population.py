@@ -14,6 +14,12 @@ DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
 url = "https://pxweb.stat.si/SiStatData/api/v1/en/Data/05C4003S.px"
 
+# Ask the table which half years exist and use the newest one
+metadata = requests.get(url).json()
+periods = next(v for v in metadata["variables"] if v["code"] == "POLLETJE")["values"]
+latest_period = periods[-1]
+print(f"Using population data for {latest_period}")
+
 # Defines which data to request: all municipalities, total population (all ages), most recent period
 query = {
     "query": [
@@ -35,7 +41,7 @@ query = {
             "code": "POLLETJE",  # half-year period
             "selection": {
                 "filter": "item",
-                "values": ["2026H1"]
+                "values": [latest_period]
             }
         }
     ],
