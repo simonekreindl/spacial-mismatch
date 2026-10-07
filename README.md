@@ -2,7 +2,7 @@
 
 This code builds a database of services (shops, doctors, schools, and more) and population numbers for all 212 Slovenian municipalities. Everything is collected, cleaned, and matched to the right municipality automatically. As a first, simple use of that data, it also calculates a mismatch score per category, showing which municipalities have notably more or fewer services than their population would suggest.
 
-It does this in six steps:
+It does this in the following steps:
 
 1. Downloads the official boundaries of all 212 Slovenian municipalities
 2. Downloads the locations of shops, doctors, schools, etc. from OpenStreetMap, based on categories defined in `config.yaml`
@@ -14,9 +14,11 @@ It does this in six steps:
 
 ## Setup
 
-You need Python 3.10 or newer installed (this was built and tested with Python 3.13).
+Download the project from GitHub: click the green "Code" button on the repository page, then "Download ZIP", and unzip it. If you have Git installed, you can also clone it instead.
 
-1. Open a terminal in this folder
+You need Python installed before starting (this was built and tested with Python 3.13).
+
+1. Open a terminal the project folder
 
 2. Create a virtual environment:
        python -m venv venv
@@ -41,14 +43,17 @@ Make sure the virtual environment is activated (you should see `(venv)` at the s
 
 This runs everything from start to finish. It takes around 30 to 60 minutes, because of the OpenStreetMap download step. That server sometimes fails to respond, so the pipeline retries automatically. Error messages like "status 504" during this step are normal. If a category still fails after all retries, it is listed in `data/raw/failed_queries.log`.
 
-## Where to find things
+## Where to find the results
 
-- `data/final/mismatch_results.gpkg` — the final result, open this in QGIS to see the map
-- `data/final/all_locations.csv` — every location as a simple list without duplicates, to open in Excel
-- `data/interim/points_with_municipality.gpkg` — every individual location (shop, doctor, etc.), filterable by category
-- `data/interim/category_counts_per_municipality.csv` — raw counts per municipality
-- `data/raw/osm_raw_points.csv` — the raw OpenStreetMap download, before anything else was done to it
-- `config.yaml` — edit this to add or remove categories, then run `python main.py` again
+The `data/` folder has three subfolders: `raw` for downloaded data, `interim` for the processing steps, and `final` for the end results. In data/final you can find:
 
+- `mismatch_results.gpkg` — the final result with the mismatch values per municipality, open this in QGIS to see the map
+- `all_locations.csv` — every location as a simple list without duplicates, to open in Excel
 
+## Reading the results
+
+For every category, `mismatch_results.gpkg` contains a rank, a mismatch value, and a signed mismatch value.
+The rank orders all municipalities by their number of locations, with 1 being the most. Municipalities with the same count share an averaged rank, for example 25.5.
+The mismatch value is the distance between this rank and the population rank. A large number means far more or far fewer locations than the population would suggest.
+The signed version adds the direction: positive means more locations than expected, negative means fewer.
 

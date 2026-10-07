@@ -45,8 +45,6 @@ for cat in category_columns:
 
 df = pd.concat([df, pd.DataFrame(new_columns)], axis=1)
 
-print(df.head())
-
 # Combine with municipality boundaries to produce a mappable final result
 boundaries = gpd.read_file(os.path.join(DATA_DIR, "raw", "municipalities.gpkg"))
 boundaries["sifra_obcine"] = boundaries["sifra_obcine"].astype(str)
@@ -56,4 +54,5 @@ final = boundaries.merge(df, on="sifra_obcine", how="left")
 
 # Save as a GeoPackage file
 final.to_file(os.path.join(DATA_DIR, "final", "mismatch_results.gpkg"), driver="GPKG")
+print(f"Calculated mismatch for {len(category_columns)} categories in {len(final)} municipalities")
 print("Saved as mismatch_results.gpkg")

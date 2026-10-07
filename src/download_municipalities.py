@@ -30,8 +30,7 @@ gdf = gpd.read_file(wfs_url)
 gdf = gdf[["SIFRA", "NAZIV", "geometry"]]
 gdf = gdf.rename(columns={"SIFRA": "sifra_obcine", "NAZIV": "municipality_name"})
 
-print(f"Number of municipalities: {len(gdf)}")
-print(gdf.head())
+print(f"Downloaded boundaries for {len(gdf)} municipalities")
 
 # Save as a GeoPackage file
 gdf.to_file(os.path.join(DATA_DIR, "raw", "municipalities.gpkg"), driver="GPKG")

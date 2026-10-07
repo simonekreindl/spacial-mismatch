@@ -65,8 +65,7 @@ df = pd.DataFrame(rows)
 # Exclude Slovenia as a whole (code "0"), keep only individual municipalities
 df = df[df["sifra_obcine"] != "0"]
 
-print(df.head())
-print(f"Number of municipalities: {len(df)}")
+print(f"Downloaded population for {len(df)} municipalities")
 
 # Save result to CSV
 df.to_csv(os.path.join(DATA_DIR, "raw", "population_per_municipality.csv"), index=False, encoding="utf-8")

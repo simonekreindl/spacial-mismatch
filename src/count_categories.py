@@ -24,7 +24,7 @@ counts_wide = counts.pivot_table(
     fill_value=0
 ).reset_index()
 
-# Make sure every category has a column, even if it hadzero matches
+# Make sure every category has a column, even if it had zero matches
 with open(os.path.join(SCRIPT_DIR, "..", "config.yaml"), "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 all_expected_categories = [
@@ -36,8 +36,7 @@ for cat in all_expected_categories:
     if cat not in counts_wide.columns:
         counts_wide[cat] = 0
 
-print(counts_wide.head())
-
 # Save result to CSV
 counts_wide.to_csv(os.path.join(DATA_DIR, "interim", "category_counts_per_municipality.csv"), index=False, encoding="utf-8")
+print(f"Counted {len(joined)} locations in {len(counts_wide)} municipalities")
 print("Saved as category_counts_per_municipality.csv")
