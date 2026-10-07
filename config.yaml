@@ -6,11 +6,19 @@ categories:
       - shop=supermarket
       - shop=convenience
       - shop=discount_store
+      - shop=kiosk
+      - shop=general
     food_supply_other:
       - shop=grocery
       - shop=bakery
       - shop=butcher
       - shop=greengrocer
+      - shop=pastry
+      - shop=confectionery
+      - shop=dairy
+      - shop=deli
+      - shop=cheese
+      - shop=seafood
     retail:
       - shop=mall
       - shop=department_store
@@ -18,10 +26,31 @@ categories:
       - shop=shoes
       - shop=furniture
       - shop=electronics
+      - shop=chemist
+      - shop=florist
+      - shop=hardware
+      - shop=sports
+      - shop=doityourself
+      - shop=variety_store
+      - shop=books
+      - shop=computer
+      - shop=mobile_phone
+      - shop=stationery
+      - shop=electrical
+      - shop=houseware
+      - shop=alcohol
+      - shop=wine
+      - shop=pet
+      - shop=medical_supply
     commercial_services:
       - shop=hairdresser
+      - shop=beauty
+      - shop=tailor
       - shop=laundry
       - shop=dry_cleaning
+      - shop=massage
+      - shop=photo
+      - shop=copyshop
       - office=insurance
     bank_branches:
       - amenity=bank
@@ -41,57 +70,69 @@ categories:
   health:
     doctor_practices:
       - amenity=doctors
+      - healthcare=doctor
     dental_practices:
       - amenity=dentist
+      - healthcare=dentist
     general_specialist_practices:
       - amenity=clinic
+      - healthcare=clinic
+      - healthcare=centre
+    hospitals:
+      - amenity=hospital
+      - healthcare=hospital
     pharmacies:
       - amenity=pharmacy
+      - healthcare=pharmacy
     nursing_homes:
+      - social_facility=nursing_home
+      - social_facility=assisted_living
+      - social_facility=retirement_home
+      - social_facility=care_home
+      - social_facility=day_care
       - amenity=nursing_home
-      - amenity=social_facility
 
   education:
     kindergartens:
       - amenity=kindergarten
+      - amenity=childcare
     schools:
       - amenity=school
     public_libraries:
       - amenity=library
-    adult_education_centers:
-      - amenity=community_centre
     music_schools:
       - amenity=music_school
 
   leisure:
     green_open_space:
       - leisure=park
-      - leisure=garden
+      - leisure=dog_park
+      - leisure=recreation_ground
     entertainment_culture:
       - amenity=cinema
       - amenity=theatre
       - tourism=museum
       - amenity=nightclub
       - amenity=arts_centre
+      - amenity=music_venue
     playgrounds:
       - leisure=playground
     sports_facilities:
       - leisure=sports_centre
-      - leisure=pitch
+      - leisure=sports_hall
       - leisure=stadium
-    swimming_facilities:
-      - leisure=swimming_pool
+      - leisure=fitness_centre
+      - leisure=pitch
     gastronomy:
       - amenity=restaurant
       - amenity=cafe
       - amenity=bar
       - amenity=fast_food
       - amenity=pub
+      - amenity=biergarten
+      - amenity=food_court
+      - amenity=ice_cream
     places_of_worship:
       - amenity=place_of_worship
     firefighters:
       - amenity=fire_station
-    senior_meeting_places:
-      - amenity=social_facility
-    youth_leisure_centres:
-      - amenity=youth_centre
