@@ -57,3 +57,6 @@ The rank orders all municipalities by their number of locations, with 1 being th
 The mismatch value is the distance between this rank and the population rank. A large number means far more or far fewer locations than the population would suggest.
 The signed version adds the direction: positive means more locations than expected, negative means fewer.
 
+## Acknowledgements
+
+The activity was partly funded by the Slovenian Research and Innovation Agency (ARIS) through research programme [Geography of Slovenia P6-0101] and research project [Reducing the need for daily mobility through integrated planning J6-70241].
